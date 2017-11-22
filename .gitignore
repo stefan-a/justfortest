@@ -9,7 +9,8 @@ obj/
 packages/
 .sonarqube/
 *.nupkg
-
+.vs/
+[Aa]rtifacts/
 _ReSharper*/
 
 *.ncrunch*
