@@ -8,7 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{395145CA-A56C-4D99-92B4-63FE2CA3F930}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		..\jenkinsfile = ..\jenkinsfile
+		..\Jenkinsfile = ..\Jenkinsfile
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoneWolf.Tests", "LoneWolf.Tests\LoneWolf.Tests.csproj", "{C66DBD7A-B41B-4529-8BFF-4B5E80A50D36}"
