@@ -2,7 +2,7 @@
 pipeline{
 	agent any
 	tools {
-		msbuild '.NET Core 2.0.0'
+		msbuild 'vs2017 MSBuild'
 	}
 	stages {
 		stage('checkout'){
