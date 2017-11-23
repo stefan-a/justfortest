@@ -15,32 +15,21 @@ pipeline{
 			}
 		}
 		stage('Prepare for build'){
-			tools {
-				msbuild 'vs2017 MSBuild'
-			}
 			steps {
 				dir('src') {
 					bat 'dotnet restore'
 				}
 			}
 		}
+		stage('Build'){
+			tools {
+				msbuild 'vs2017 MSBuild'
+			}
+			steps {
+				dir('src'){
+					bat 'msbuild /t:rebuild'
+				}
+			}
+		}
 	}
 }
-// pipeline {
-//   agent any
-//   stages {
-//     stage('Step 1') {
-//       steps {
-//         parallel(
-//           "Step 1": {
-//             echo 'Hello to you all!'
-//             
-//           },
-//           "Fetch Code": {
-//             git(url: 'https://github.com/stefan-a/justfortest', branch: 'master', changelog: true)
-//           }
-//         )
-//       }
-//     }
-//   }
-// }
