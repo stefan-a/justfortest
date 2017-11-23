@@ -18,7 +18,9 @@ pipeline{
 			}
 		}
 		stage('Prepare for build'){
-			bat 'dotnet restore'
+			step {
+				bat 'dotnet restore'
+			}
 		}
 	}
 }
