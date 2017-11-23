@@ -27,7 +27,7 @@ pipeline{
 			}
 			steps {
 				dir('src'){
-					bat '\"${msbuild} /t:rebuild\"'
+					bat '${msbuild} /t:rebuild'
 					//bat 'dotnet build'
 				}
 			}
