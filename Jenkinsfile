@@ -1,9 +1,6 @@
 #!/usr/bin/env groovy
 pipeline{
 	agent any
-	tools {
-		msbuild 'vs2017 MSBuild'
-	}
 	stages {
 		stage('checkout'){
 			steps{
@@ -18,8 +15,13 @@ pipeline{
 			}
 		}
 		stage('Prepare for build'){
+			tools {
+				msbuild 'vs2017 MSBuild'
+			}
 			steps {
-				bat 'dotnet restore'
+				dir('scr') {
+					bat 'dotnet restore'
+				}
 			}
 		}
 	}
