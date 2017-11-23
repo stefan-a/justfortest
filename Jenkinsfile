@@ -27,7 +27,10 @@ pipeline{
 			}
 			steps {
 				dir('src'){
-					bat '${msbuild} /t:rebuild'
+					script {
+					  def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
+					  bat "${msbuild} /t:rebuild"
+					} 
 					//bat 'dotnet build'
 				}
 			}
