@@ -19,7 +19,7 @@ pipeline{
 				msbuild 'vs2017 MSBuild'
 			}
 			steps {
-				dir('scr') {
+				dir('src') {
 					bat 'dotnet restore'
 				}
 			}
