@@ -5,10 +5,14 @@ namespace LoneWolf.Tests
 {
     public class PlayerTests
     {
-        [Fact]
-        public void WhenNewPlayerNameDoesNotContainLetters_TheThrowArgumentException()
+        [Theory]
+        [InlineData("")]
+        [InlineData("0")]
+        [InlineData("\t")]
+        [InlineData(" ")]
+        public void WhenNewPlayerNameDoesNotContainLetters_TheThrowArgumentException(string name)
         {
-            Assert.Throws<ArgumentException>(() => new Player(""));
+            Assert.Throws<ArgumentException>(() => new Player(name));
         }
 
         [Fact]
